@@ -1,6 +1,6 @@
 {
   "name": "custom-edp-selfbot",
-  "version": "0.4.2",
+  "version": "0.4.4",
   "description": "A Discord.js selfbot based on the Akairo framework.",
   "main": "edp.js",
   "author": "Evildeathpro",

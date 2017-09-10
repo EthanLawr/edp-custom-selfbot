@@ -6,18 +6,24 @@ const Discord = require ('discord.js');
 
 //Utility
 const utility = "" +
-"**Async** - Something Like Eval but better\n" +
-"**Eval** - Something for progammers basically\n" +
 "**Flush** - Prunes bot messages provided you have the perms\n" +
 "**Game** - Changes your playing status\n"+
 "**Help** - This Menu\n" +
 "**Ping** - Tests your connection to the bot's host\n" +
 "**Prune** - Prunes your messages only\n" +
 "**Purge** - Prunes all messages provided you have the perms\n" +
-"**Python** - Something Like Eval but in the Python Language\n" +
 "**Quote** - Quotes peoples messages via message id\n" +
+"**Reload** - Reloads a command that you choose\n" +
 "**Restart** - Restarts the bot. Does not turn it back on\n" +
 "**Status** - Changes your status (Example: Online, Invisble, etc.)\n";
+
+//Evaluation Commands
+const evalu = "" +
+"**Async** - Something Like Eval but better\n" +
+"**Eval** - Something for progammers basically\n" +
+"**Python** - Something Like Eval but in the Python Language\n" +
+"**RPN** - Reverse Polish notation\n" +
+"**Ruby** - Something Like Eval but in the Ruby Language\n";
 
 //Fun
 const fun = "" +
@@ -33,7 +39,6 @@ const fun = "" +
 "**OrangeText** - Makes an orange code block containing text that you specify\n" +
 "**React** - Turns text into reactions!\n" +
 "**Reverse** - Reverses the text you input\n" +
-"**RPN** - Reverse Polish notation\n" +
 "**Shoot** - Lets you shoot some people!\n" +
 "**Shout** - Turns text into emotes!\n" +
 "**Sigh** - Makes a giant sigh\n" +
@@ -211,7 +216,7 @@ function exec(message, args){
     //Incase nothing is presented for the help menu	
 	if (!urgs[0]) {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Type //help [command] to learn how to use a command! (coming soon)").setColor("#2200FF").setTitle(`Help Menu`).addField("Want all of the help commands?", "Type `//help all`").addField("Want all of the fun help commands?", "Type `//help fun`").addField("Want all of the utility help commands?", "Type `//help utility` or `//help util`").addField("Want all of the info help commands?", "Type `//help information` or `//help info`").addField("Want all of the moderation help commands?", "Type `//help moderation` or `//help mod`"));	
+    return message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Type //help [command] to learn how to use a command! (coming soon)").setColor("#2200FF").setTitle(`Help Menu`).addField("Want all of the help commands?", "Type `//help all`").addField("Want all of the fun help commands?", "Type `//help fun`").addField("Want all of the utility help commands?", "Type `//help utility` or `//help util`").addField("Want all of the info help commands?", "Type `//help information` or `//help info`").addField("Want all of the moderation help commands?", "Type `//help moderation` or `//help mod`").addField("Want all of the evaluation help commands?", "Type `//help evaluation` or `//help evalu`"));	
     }
 	
 	//Categories
@@ -223,7 +228,7 @@ function exec(message, args){
     let delay=500;
     let currentTime;
     for(let i=1;i<args.amount+1;i++){
-      message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Type //help [command] to learn how to use a command! (coming soon)").setColor("#2200FF").setTitle(`Help Menu`).addField("Fun Help Menu", fun).addField("Info Help Menu", info).addField("Utility Help Menu", utility).addField("Moderation Help Menu", moderation));
+      message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Type //help [command] to learn how to use a command! (coming soon)").setColor("#2200FF").setTitle(`Help Menu`).addField("Fun Help Menu", fun).addField("Info Help Menu", info).addField("Utility Help Menu", utility).addField("Moderation Help Menu", moderation).addField("Evaluation Help Menu", evalu));
       ms=time.getMilliseconds();
 
       do
@@ -288,6 +293,24 @@ function exec(message, args){
 		.setDescription(moderation)
 		.setColor("#2200FF")
 		.setTitle(`Mod Help Menu`));
+    }
+	
+	//Evaluation Commands
+	if (urgs[0]=="evaluation") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription(evalu)
+		.setColor("#2200FF")
+		.setTitle(`Evaluation Help Menu`));
+    }
+	
+	//Evalu Commands
+	if (urgs[0]=="evalu") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription(evalu)
+		.setColor("#2200FF")
+		.setTitle(`Eval Help Menu`));
     }
 	
 	//Cat Command
@@ -406,7 +429,7 @@ function exec(message, args){
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("DogBomb", DogBombDesc)
-		.addField("Aliases:", "DogBomb\n"++"DogeBomb\n"+"PuppyBomb")
+		.addField("Aliases:", "DogBomb\n"+"DogeBomb\n"+"PuppyBomb")
 		.addField("Usage:", DogBombUsage));
     }
 	

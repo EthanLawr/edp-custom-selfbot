@@ -9,7 +9,6 @@ const utility = "" +
 "**Flush** - Prunes bot messages provided you have the perms\n" +
 "**Game** - Changes your playing status\n"+
 "**Github** - Searches for Github repositories\n"+
-"**Help** - This Menu\n" +
 "**Ping** - Tests your connection to the bot's host\n" +
 "**Prune** - Prunes your messages only\n" +
 "**Purge** - Prunes all messages provided you have the perms\n" +
@@ -54,6 +53,7 @@ const info = "" +
 "**Edits** - Checks the edits of a message\n" +
 "**Emotes** - Shows a guild's emotes\n" +
 "**Guild** - Shows information about a server\n" +
+"**Help** - This Menu\n" +
 "**Icon** - Shows a guilds icon\n" +
 "**Id** - Shows the ids of objects\n" +
 "**Idd** - Rewrite of id\n" +

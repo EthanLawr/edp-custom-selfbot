@@ -17,4 +17,4 @@ This bot uses [Discord.js](https://discord.js.org/) and [Akairo](https://1comput
 ## Configuration
 Just change the `config.json` file in `src/data/config.json`
 
-Yea, sorry I will not spoonfeed you anything. This is just my style. Sorry bubs.  
+Yea, sorry I will not spoonfeed you much. This is just for smart people who probably already have had selfbots but could do with a better one.

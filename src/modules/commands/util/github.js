@@ -5,7 +5,7 @@ const Discord = require ('discord.js');
 
 function exec(message) { 
 	const args = message.content.split(/\s+/).slice(1);
-    if (args.length < 1) {
+    if (!args[0]) {
         return message.edit('You must specify a repository to search!');
     }
 
@@ -26,7 +26,6 @@ function exec(message) {
 			.setDescription(getInfo(item))
 			.setColor('#2200FF'));
         });
-		    message.delete();
 
     } else {
 
@@ -38,7 +37,7 @@ function exec(message) {
                 return message.edit(`:sob: No results found for '${args.join(' ')}'`)
             }
 
-
+			message.delete();
             message.channel.sendMessage('Here are the top 3 results:');
 
             for (let i = 0; i < 3; i++) {

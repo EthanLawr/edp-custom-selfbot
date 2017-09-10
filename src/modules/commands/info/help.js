@@ -40,6 +40,7 @@ const fun = "" +
 "**OrangeText** - Makes an orange code block containing text that you specify\n" +
 "**React** - Turns text into reactions!\n" +
 "**Reverse** - Reverses the text you input\n" +
+"**Roulette** - Russian Roulette!\n" +
 "**Shoot** - Lets you shoot some people!\n" +
 "**Shout** - Turns text into emotes!\n" +
 "**Sigh** - Makes a giant sigh\n" +

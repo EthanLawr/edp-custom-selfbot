@@ -5,5 +5,5 @@ const config = require('./src/data/config.json');
 const client = new EdpClient(config);
 
 client.start().then(() => {
-    Logger.info('EDP\'s Custom Megumin ready! Explooooooosion!');
+    Logger.info('EDP\'s Custom Selfbot is now ready!');
 });

@@ -62,6 +62,21 @@ const moderation = "" +
 
 //Commands Constants
 
+//Cat
+const CatDesc = "" +
+"Generates a random cat image";
+
+const CatUsage = "" + 
+"//cat\n" +
+"\tProduces a random cat image";
+
+const KittyDesc = "" +
+"Generates a random kitty image";
+
+const KittyUsage = "" + 
+"//kitty\n" +
+"\tProduces a random kitty image";
+
 //Color
 const ColorDesc = "" +
 "Generates a random color or outputs with a specified color.";
@@ -214,6 +229,30 @@ function exec(message, args){
 		.setDescription(moderation)
 		.setColor("#2200FF")
 		.setTitle(`Mod Help Menu`));
+    }
+	
+	//Cat Command
+	if (urgs[0]=="color") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Cat", CatDesc)
+		.addField("Aliases:", "Cat\n"+"Kitty")
+		.addField("Usage:", CatUsage));
+    }
+	
+	//Cat Command Alias: Kitty
+	if (urgs[0]=="color") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Kitty", KittyDesc)
+		.addField("Aliases:", "Kitty\n"+"Cat")
+		.addField("Usage:", KittyUsage));
     }
 	
 	//Color Command

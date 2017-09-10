@@ -36,6 +36,7 @@ const fun = "" +
 "**RPN** - Reverse Polish notation\n" +
 "**Shoot** - Lets you shoot some people!\n" +
 "**Shout** - Turns text into emotes!\n" +
+"**Sigh** - Makes a giant sigh\n" +
 "**SuperReact** - Reacts with a random emote that you are able to use\n" +
 "**Time** - Shows the time of an area you name\n" +
 "**XKCD** - Generates a random webcomic\n";

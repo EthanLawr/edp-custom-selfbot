@@ -7,11 +7,13 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.1.0",
+    "cheerio": "^0.22.0",
     "discord-akairo": "github:1computer1/discord-akairo#d967e1eac0aa5bbb687883d972a531a71de8a0d6",
     "discord.js": "^11.1.0",
     "got": "^6.7.1",
     "moment": "^2.18.1",
     "relevant-xkcd": "^1.1.1",
+    "request": "latest",
     "superagent": "^3.5.2",
     "snekfetch": "^3.3.0"
   },

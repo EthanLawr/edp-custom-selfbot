@@ -9,28 +9,28 @@ function exec(message, args) {
     }
 
     const cb = '```';
-    const input = args.code.replace(/\n/g, '\\n').replace(/"/g, '\\"').replace(/'/g, '\\\'');
+    const input = args.code.replace(/\\n/, '\\\\n').replace(/\n/g, ';').replace(/"/g, '\\"');
 
     return new Promise((resolve, reject) => {
-        childProcess.exec(`python -c "exec('${input}')"`, (err, stdout, stderr) => {
+        childProcess.exec(`ruby -e "${input}"`, (err, stdout, stderr) => {
             if (err || stderr) return reject(err || stderr);
             return resolve(stdout);
         });
     }).then(stdout => {
         if (stdout.length + args.code.length > 1900) stdout = 'Output too long.';
-        return message.edit(`🐍\u2000**Input**${cb}py\n${args.code}\n${cb}\n📤\u2000**Output**${cb}py\n${stdout}\n${cb}`);
+        return message.edit(`??\u2000**Input**${cb}ruby\n${args.code}\n${cb}\n??\u2000**Output**${cb}ruby\n${stdout}\n${cb}`);
     }).catch(err => {
         Logger.warn('Evaluation errored.');
         Logger.error(err);
 
         err = err.toString();
         if (err.length + args.code.length > 1900) err = 'Output too long.';
-        return message.edit(`🐍\u2000**Input**${cb}py\n${args.code}\n${cb}\n☠\u2000**Error**${cb}py\n${err}\n${cb}`);
+        return message.edit(`??\u2000**Input**${cb}ruby\n${args.code}\n${cb}\n?\u2000**Error**${cb}ruby\n${err}\n${cb}`);
     });
 }
 
-module.exports = new Command('python', exec, {
-    aliases: ['python', 'py'],
+module.exports = new Command('ruby', exec, {
+    aliases: ['ruby', 'rb'],
     args: [
         {
             id: 'code',

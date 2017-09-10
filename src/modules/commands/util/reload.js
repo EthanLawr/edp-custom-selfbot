@@ -9,7 +9,7 @@ function exec(message, args) {
 
     args.command.reload();
     Logger.debug(`Command ${args.command.id} reload.`);
-    return message.edit(`Command `+"`"+`${args.command.id}`+"`"+` reloaded.`);
+    return message.edit(`The following command was reloaded`+"`"+`${args.command.id}`+"`");
 }
 
 module.exports = new Command('reload', exec, {

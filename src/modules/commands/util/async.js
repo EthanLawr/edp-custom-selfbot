@@ -4,7 +4,7 @@ const Logger = require('../../../util/Logger');
 function exec(message, args) {
     if (!args.code) {
         Logger.warn('No code provided to evaluate.');
-        return message.delete();
+        return message.edit("Please provide some code to evaluate!");
     }
 
     args.actualInput = args.code;

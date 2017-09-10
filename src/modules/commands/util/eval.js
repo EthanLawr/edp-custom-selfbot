@@ -8,7 +8,7 @@ const data = {};
 function exec(message, args) {
     if (!args.code) {
         Logger.warn('No code provided to evaluate.');
-        return message.delete();
+        return message.edit("Please provide some code to evaluate!");
     }
 
     const evaled = {};

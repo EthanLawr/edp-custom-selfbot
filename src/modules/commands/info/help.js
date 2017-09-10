@@ -9,6 +9,7 @@ const utility = "" +
 "**Flush** - Prunes bot messages provided you have the perms\n" +
 "**Game** - Changes your playing status\n"+
 "**Github** - Searches for Github repositories\n"+
+"**Google** - Searches for whatever you want!\n"+
 "**Ping** - Tests your connection to the bot's host\n" +
 "**Prune** - Prunes your messages only\n" +
 "**Purge** - Prunes all messages provided you have the perms\n" +

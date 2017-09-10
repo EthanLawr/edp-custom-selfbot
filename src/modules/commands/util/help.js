@@ -21,7 +21,11 @@ const utility = "" +
 
 //Fun
 const fun = "" +
+"**Cat** - Creates an image of a cat!\n" +
+"**CatBomb** - Creates multiple images of cats! (5)\n" +
 "**Color** - Creates a Rich Embed with a random color (And shows the hex code automatically)\n" +
+"**Dog** - Creates an image of a dog!\n" +
+"**DogBomb** - Creates multiple images of dogs! (5)\n" +
 "**Embed** - Puts the text you input into a Rich Embed\n" +
 "**Flip** - Flips the text you input\n" +
 "**GreenText** - Makes a green code block containing text that you specify\n" +
@@ -306,15 +310,6 @@ function exec(message, args){
 		.addField("Aliases:", "Green\n" + "GreenText")
 		.addField("Usage:", GreenUsage));
     }	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
 module.exports = new Command('help', exec, {

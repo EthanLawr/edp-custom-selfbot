@@ -77,6 +77,21 @@ const KittyUsage = "" +
 "//kitty\n" +
 "\tProduces a random kitty image";
 
+//CatBomb
+const CatBombDesc = "" +
+"Generates a bomb of random cat images (5)";
+
+const CatBombUsage = "" + 
+"//catbomb\n" +
+"\tProduces a bomb of random cat images";
+
+const KittyBombDesc = "" +
+"Generates a bomb of random kitty images (5)";
+
+const KittyBombUsage = "" + 
+"//kittybomb\n" +
+"\tProduces a bomb of random kitty images (5)";
+
 //Color
 const ColorDesc = "" +
 "Generates a random color or outputs with a specified color.";
@@ -104,6 +119,50 @@ const ColourUsage = "" +
 "//colour[auto]\n" +
 "\tMakes it so that the colour is equal to your current role";
 	
+//Cat
+const DogDesc = "" +
+"Generates a random dog image";
+
+const DogUsage = "" + 
+"//dog\n" +
+"\tProduces a random dog image";
+
+const DogeDesc = "" +
+"Generates a random doge image";
+
+const DogeUsage = "" + 
+"//doge\n" +
+"\tProduces a random doge image";
+
+const PuppyDesc = "" +
+"Generates a random puppy image";
+
+const PuppyUsage = "" + 
+"//puppy\n" +
+"\tProduces a random puppy image";
+
+//CatBomb
+const DogBombDesc = "" +
+"Generates a bomb of random dog images (5)";
+
+const DogBombUsage = "" + 
+"//dogbomb\n" +
+"\tProduces a bomb of random dog images";
+
+const DogeBombDesc = "" +
+"Generates a bomb of random doge images (5)";
+
+const DogeBombUsage = "" + 
+"//dogebomb\n" +
+"\tProduces a bomb of random doge images";
+
+const PuppyBombDesc = "" +
+"Generates a bomb of random puppy images (5)";
+
+const PuppyBombUsage = "" + 
+"//puppybomb\n" +
+"\tProduces a bomb of random puppy images (5)";
+
 //Embed
 const EmbedDesc = "" +
 "Generates a Rich Embedded message with message content of your choice.";
@@ -232,7 +291,7 @@ function exec(message, args){
     }
 	
 	//Cat Command
-	if (urgs[0]=="color") {
+	if (urgs[0]=="cat") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
 		.setDescription("Beta Thing")
@@ -244,7 +303,7 @@ function exec(message, args){
     }
 	
 	//Cat Command Alias: Kitty
-	if (urgs[0]=="color") {
+	if (urgs[0]=="kitty") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
 		.setDescription("Beta Thing")
@@ -253,6 +312,30 @@ function exec(message, args){
 		.addField("Kitty", KittyDesc)
 		.addField("Aliases:", "Kitty\n"+"Cat")
 		.addField("Usage:", KittyUsage));
+    }
+	
+	//CatBomb Command
+	if (urgs[0]=="catbomb") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("CatBomb", CatBombDesc)
+		.addField("Aliases:", "CatBomb\n"+"KittyBomb")
+		.addField("Usage:", CatBombUsage));
+    }
+	
+	//CatBomb Command Alias: KittyBomb
+	if (urgs[0]=="kittybomb") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("KittyBomb", KittyBombDesc)
+		.addField("Aliases:", "KittyBomb\n"+"CatBomb")
+		.addField("Usage:", KittyBombUsage));
     }
 	
 	//Color Command
@@ -277,6 +360,78 @@ function exec(message, args){
 		.addField("Colour", ColourDesc)
 		.addField("Aliases:", "Colour\n"+"Color")
 		.addField("Usage:", ColourUsage));
+    }
+	
+	//Dog Command
+	if (urgs[0]=="dog") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Dog", DogDesc)
+		.addField("Aliases:", "Dog\n"+"Doge\n"+"Puppy")
+		.addField("Usage:", DogUsage));
+    }
+	
+	//Dog Command Alias: Doge
+	if (urgs[0]=="doge") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Doge", DogeDesc)
+		.addField("Aliases:", "Doge\n"+"Puppy\n"+"Dog")
+		.addField("Usage:", DogeUsage));
+    }
+	
+	//Dog Command Alias: Puppy
+	if (urgs[0]=="puppy") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Puppy", PuppyDesc)
+		.addField("Aliases:", "Puppy\n"+"Dog\n"+"Doge")
+		.addField("Usage:", PuppyUsage));
+    }
+	
+	//DogBomb Command
+	if (urgs[0]=="dogbomb") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("DogBomb", DogBombDesc)
+		.addField("Aliases:", "DogBomb\n"++"DogeBomb\n"+"PuppyBomb")
+		.addField("Usage:", DogBombUsage));
+    }
+	
+	//DogBomb Command Alias: DogeBomb
+	if (urgs[0]=="dogebomb") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("DogeBomb", DogeBombDesc)
+		.addField("Aliases:", "DogeBomb\n"+"PuppyBomb\n"+"DogBomb")
+		.addField("Usage:", DogeBombUsage));
+    }
+	
+	//DogBomb Command Alias: PuppyBomb
+	if (urgs[0]=="puppybomb") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("PuppyBomb", PuppyBombDesc)
+		.addField("Aliases:", "PuppyBomb\n"+"DogBomb\n"+"DogeBomb")
+		.addField("Usage:", PuppyBombUsage));
     }
 	
 	//Embed Command

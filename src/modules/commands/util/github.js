@@ -6,7 +6,7 @@ const Discord = require ('discord.js');
 function exec(message) { 
 	const args = message.content.split(/\s+/).slice(1);
     if (!args[0]) {
-        return message.edit('You must specify a repository to search!');
+        return message.edit('You must specify a repository to search for!');
     }
 
     if (args[0].indexOf('/') !== -1) {
@@ -29,12 +29,12 @@ function exec(message) {
 
     } else {
 
-        message.edit(`:arrows_counterclockwise:  Searching for '${args.join(' ')}'...`);
+        message.edit(`Searching for '${args.join(' ')}'...`);
 
         got(`https://api.github.com/search/repositories?q=${args.join('+')}`).then(res => {
             let json = JSON.parse(res.body);
             if (json.total_count < 1) {
-                return message.edit(`:sob: No results found for '${args.join(' ')}'`)
+                return message.edit(`No results found for '${args.join(' ')}'`)
             }
 
 			message.delete();

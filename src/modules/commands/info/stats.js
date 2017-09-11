@@ -22,9 +22,14 @@ function exec(message){
             `${process.hrtime()[0]/8000} %`,
             true
         ],
-		[
+	[
             'Game',
             `${game.name || 'None'}`,
+            true
+        ]
+	[
+            'Commands',
+            `52`,
             true
         ]
     ];

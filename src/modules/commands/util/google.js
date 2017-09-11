@@ -38,13 +38,16 @@ function exec(message) {
 
                 results = results.filter(r => r.link && r.description);
                 results = results.splice(0, 5);
-
+				
+				if(results=="") {
+				return message.channel.send("Oh no! You input an invalid search request!");
+				} else {
                 m.channel.sendEmbed(new Discord.RichEmbed()
 				.setColor('#2200FF')
 				.setTitle(``)
 				.setDescription(``)
 				.addField(`Search results for \`${args.join(' ')}\``, results.map(r => r.link + '\n\t' + r.description + '\n').join('\n')));
-			} else {
+			}} else {
                 m.edit(`Error! (${res.statusCode}): ${res.statusMessage}`);
             }
         });

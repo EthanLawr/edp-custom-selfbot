@@ -26,7 +26,7 @@ function exec(message){
             'Game',
             `${game.name || 'None'}`,
             true
-        ]
+        ],
 	[
             'Commands',
             `52`,

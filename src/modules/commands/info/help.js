@@ -106,12 +106,12 @@ const ColorDesc = "" +
 "Generates a random color or outputs with a specified color.";
 
 const ColorUsage = "" + 
+"//color\n" +
+"\tProduces a random color\n" 
 "//color [Hex Code]\n" +
 "\tProduces a color based on what hex code you input\n" +
 "//color[Integer]\n" +
 "\tProduces a color based on what integer you input\n" +
-"//color [Random Stuff]\n" +
-"\tProduces a random color\n" +
 "//color[auto]\n" +
 "\tMakes it so that the color is equal to your current role";
 
@@ -119,12 +119,12 @@ const ColourDesc = "" +
 "Generates a random colour or outputs with a specified colour.";
 
 const ColourUsage = "" + 
+"//colour\n" +
+"\tProduces a random colour\n" 
 "//colour [Hex Code]\n" +
 "\tProduces a colour based on what hex code you input\n" +
 "//colour[Integer]\n" +
 "\tProduces a colour based on what integer you input\n" +
-"//colour [Random Stuff]\n" +
-"\tProduces a random colour\n" +
 "//colour[auto]\n" +
 "\tMakes it so that the colour is equal to your current role";
 	

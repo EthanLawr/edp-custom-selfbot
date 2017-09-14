@@ -1402,7 +1402,7 @@ let prefix = `//`;
 	"Wigglytuff"], COUNT=1;
 		const choices = new Set;
 		while(choices.size < COUNT )
-		choices.add(FieldEgg[~~(FieldEgg.length*Math.random())]);
+		choices.add(FairyEgg[~~(FairyEgg.length*Math.random())]);
 			return message.reply(`${Array.from(choices)}`);
 			}		
 		
@@ -1421,7 +1421,7 @@ let prefix = `//`;
 	"Wigglytuff"], COUNT=3;
 		const choices = new Set;
 		while(choices.size < COUNT )
-		choices.add(FieldEgg[~~(FieldEgg.length*Math.random())]);
+		choices.add(FairyEgg[~~(FairyEgg.length*Math.random())]);
 			return message.reply(`${Array.from(choices)}`);
 			}	
 			
@@ -1440,7 +1440,7 @@ let prefix = `//`;
 	"Wigglytuff"], COUNT=6;
 		const choices = new Set;
 		while(choices.size < COUNT )
-		choices.add(FieldEgg[~~(FieldEgg.length*Math.random())]);
+		choices.add(FairyEgg[~~(FairyEgg.length*Math.random())]);
 			return message.reply(`${Array.from(choices)}`);
 			}		
 			

@@ -39,6 +39,7 @@ const fun = "" +
 "**Lmgtfy** - Makes a tutorial to search google!\n" +
 "**MemeDoge** - Creates a doge meme (Copypasta)\n" +
 "**OrangeText** - Makes an orange code block containing text that you specify\n" +
+"**Pokemon** - Generates random pokemon!\n" +
 "**React** - Turns text into reactions!\n" +
 "**Reverse** - Reverses the text you input\n" +
 "**Roulette** - Russian Roulette!\n" +

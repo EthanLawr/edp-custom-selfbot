@@ -29,7 +29,12 @@ function exec(message){
         ],
 	[
             'Commands',
-            `52`,
+            `53`,
+            true
+        ]
+	[
+            'Operating System',
+            `${process.platform} ${process.arch}`,
             true
         ]
     ];

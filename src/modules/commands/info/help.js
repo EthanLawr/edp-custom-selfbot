@@ -135,7 +135,7 @@ const ColourUsage = "" +
 "//colour[auto]\n" +
 "\tMakes it so that the colour is equal to your current role";
 	
-//Cat
+//Dog
 const DogDesc = "" +
 "Generates a random dog image";
 
@@ -157,7 +157,7 @@ const PuppyUsage = "" +
 "//puppy\n" +
 "\tProduces a random puppy image";
 
-//CatBomb
+//DogBomb
 const DogBombDesc = "" +
 "Generates a bomb of random dog images (5)";
 
@@ -217,8 +217,51 @@ const GreenUsage = "" +
 "//green [message content]\n" +
 "\tProduces a message with the message content you provide in a green coloration";
 
+//Lmgtfy
+const LmgtfyDesc = "" +
+"Makes a link showing you how to search something on google\n" +
 
-const time = new Date();
+const LmgtfyUsage = "" +
+"//lmgtfy [message content]\n" +
+"\tProduces a link showing you how to search something on google";
+
+const LmgUsage = "" +
+"//lmg [message content]\n" +
+"\tProduces a link showing you how to search something on google";
+
+//Meme Dog
+const MemeDogDesc = "" +
+"Generates a Meme Doge";
+
+const MemeDogUsage = "" + 
+"//memedog\n" +
+"\tGenerates a Meme Doge";
+
+const MemeDoggoDesc = "" +
+"Generates a Meme Doggo";
+
+const MemeDoggoUsage = "" + 
+"//memedoggo\n" +
+"\tGenerates a Meme Doggo";
+
+const MDogDesc = "" +
+"Generates a MDog";
+
+const MDogUsage = "" + 
+"//mdog\n" +
+"\tGenerates a MDog";
+
+//OrangeText
+const OrangeTextDesc = "" +
+"Makes some orange text.\n";
+
+const OrangeTextUsage = "" +
+"//orangetext [message content]\n" +
+"\tProduces a message with the message content you provide in a orange color";
+
+const OrangeUsage = "" +
+"//orange [message content]\n" +
+"\tProduces a message with the message content you provide in a orange color";
 
 function exec(message, args){
 	
@@ -344,7 +387,7 @@ function exec(message, args){
 		.setTitle(`Eval Help Menu`));
     }
 	
-	//Evalu Commands
+	//Data Commands
 	if (urgs[0]=="data") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
@@ -352,6 +395,11 @@ function exec(message, args){
 		.setColor("#2200FF")
 		.setTitle(`Data Help Menu`));
     }
+
+	
+/*  Commands
+	
+	Fun Commands */
 	
 	//Cat Command
 	if (urgs[0]=="cat") {
@@ -566,8 +614,93 @@ function exec(message, args){
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Green", GreenTextDesc)
 		.addField("Aliases:", "Green\n" + "GreenText")
-		.addField("Usage:", GreenUsage));
+		.addField("Usage:", GreenUsage));	
+    }
+	
+	//Lmgtfy Command
+	if (urgs[0]=="lmgtfy") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Lmgtfy", LmgtfyDesc)
+		.addField("Aliases:", "Lmgtfy\n" + "Lmg")
+		.addField("Usage:", LmgtfyUsage));
     }	
+	
+	//Lmgtfy Command Alias: Lmg
+	if (urgs[0]=="lmg") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Lmg", LmgtfyDesc)
+		.addField("Aliases:", "Lmg\n" + "Lmgtfy")
+		.addField("Usage:", LmgUsage));
+    }	
+	
+	//MemeDog Command
+	if (urgs[0]=="memedog") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("MemeDog", MemeDogDesc)
+		.addField("Aliases:", "MemeDog\n"+"MemeDoggo\n"+"MDog")
+		.addField("Usage:", MemeDogUsage));
+    }
+	
+	//MemeDog Command Alias: MemeDoggo
+	if (urgs[0]=="memedoggo") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("MemeDoggo", MemeDoggoDesc)
+		.addField("Aliases:", "MemeDoggo\n"+"MDog\n"+"MemeDog")
+		.addField("Usage:", MemeDoggoUsage));
+    }
+	
+	//MemeDog Command Alias: MDog
+	if (urgs[0]=="mdog") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("MDog", MDogDesc)
+		.addField("Aliases:", "MDog\n"+"MemeDog\n"+"MemeDoggo")
+		.addField("Usage:", MDogUsage));
+    }
+	
+	//OrangeText Command
+	if (urgs[0]=="orangetext") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("OrangeText", OrangeTextDesc)
+		.addField("Aliases:", "OrangeText\n" + "Orange")
+		.addField("Usage:", OrangeTextUsage));
+    }	
+	
+	//OrangeText Command Alias: Orange
+	if (urgs[0]=="orange") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Beta Thing")
+		.setColor("#2200FF")
+		.setTitle(`Singular Command Help Menu`)
+		.addField("Orange", OrangeTextDesc)
+		.addField("Aliases:", "Orange\n" + "OrangeText")
+		.addField("Usage:", OrangeUsage));	
+    }
+	
 }
 
 module.exports = new Command('help', exec, {

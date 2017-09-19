@@ -219,7 +219,7 @@ const GreenUsage = "" +
 
 //Lmgtfy
 const LmgtfyDesc = "" +
-"Makes a link showing you how to search something on google\n" +
+"Makes a link showing you how to search something on google\n";
 
 const LmgtfyUsage = "" +
 "//lmgtfy [message content]\n" +

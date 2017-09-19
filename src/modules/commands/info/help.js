@@ -5,7 +5,7 @@ const Discord = require ('discord.js');
 //Categories
 
 //Utility
-const utility = "" +
+const CategoryUtility = "" +
 "**Flush** - Prunes bot messages provided you have the perms\n" +
 "**Game** - Changes your playing status\n"+
 "**Github** - Searches for Github repositories\n"+
@@ -19,7 +19,7 @@ const utility = "" +
 "**Status** - Changes your status (Example: Online, Invisble, etc.)\n";
 
 //Evaluation Commands
-const evalu = "" +
+const CategoryEvaluations = "" +
 "**Async** - Something Like Eval but better\n" +
 "**Eval** - Something for progammers basically\n" +
 "**Python** - Something Like Eval but in the Python Language\n" +
@@ -27,7 +27,7 @@ const evalu = "" +
 "**Ruby** - Something Like Eval but in the Ruby Language\n";
 
 //Fun
-const fun = "" +
+const CategoryFun = "" +
 "**Cat** - Creates an image of a cat!\n" +
 "**CatBomb** - Creates multiple images of cats! (5)\n" +
 "**Color** - Creates a Rich Embed with a random color (And shows the hex code automatically)\n" +
@@ -51,7 +51,7 @@ const fun = "" +
 "**XKCD** - Generates a random webcomic\n";
 
 //Info
-const info = "" +
+const CategoryInfo = "" +
 "**Avatar** - Shows a persons avatar\n" +
 "**Edits** - Checks the edits of a message\n" +
 "**Emotes** - Shows a guild's emotes\n" +
@@ -64,8 +64,14 @@ const info = "" +
 "**Stats** - Shows the bot's statistics\n" +
 "**User** - Shows information about a user\n";
 
+//Data
+const CategoryData = "" +
+"**Image** - Allows you to make a shortcut for an image in a Rich Embed\n" +
+"**Log** - Logs recent messages in a channel you select, great for reporting people to discord!\n"+
+"**Tag** - Allows you to make a shortcut for text\n";
+
 //Moderation
-const moderation = "" +
+const CategoryModeration = "" +
 "**Ban** - Ban someone by mentioning them\n" +
 "**Kick** - Kick someone by mentioning them\n";
 
@@ -221,45 +227,65 @@ function exec(message, args){
     //Incase nothing is presented for the help menu	
 	if (!urgs[0]) {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Type //help [command] to learn how to use a command! (coming soon)").setColor("#2200FF").setTitle(`Help Menu`).addField("Want all of the help commands?", "Type `//help all`").addField("Want all of the fun help commands?", "Type `//help fun`").addField("Want all of the utility help commands?", "Type `//help utility` or `//help util`").addField("Want all of the info help commands?", "Type `//help information` or `//help info`").addField("Want all of the moderation help commands?", "Type `//help moderation` or `//help mod`").addField("Want all of the evaluation help commands?", "Type `//help evaluation` or `//help evalu`"));	
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Type //help [command] to learn how to use a command! (coming soon)")
+		.setColor("#2200FF")
+		.setTitle(`Help Menu`)
+		.addField("Want all of the help commands?", "Type `//help all`")
+		.addField("Want all of the fun help commands?", "Type `//help fun`")
+		.addField("Want all of the utility help commands?", "Type `//help utility` or `//help util`")
+		.addField("Want all of the info help commands?", "Type `//help information` or `//help info`")
+		.addField("Want all of the moderation help commands?", "Type `//help moderation` or `//help mod`")
+		.addField("Want all of the evaluation help commands?", "Type `//help evaluation` or `//help evalu`")
+		.addField("Want all of the data help commands?", "Type `//help data`"));	
     }
 	
 	//Categories
 	
 	//All Categories
     if (urgs[0]=="all") {
-	args.amount = Math.min(args.amount, 200);
-    let ms;
-    let delay=500;
-    let currentTime;
-    for(let i=1;i<args.amount+1;i++){
-      message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Type //help [command] to learn how to use a command! (coming soon)").setColor("#2200FF").setTitle(`Help Menu`).addField("Fun Help Menu", fun).addField("Info Help Menu", info).addField("Utility Help Menu", utility).addField("Moderation Help Menu", moderation).addField("Evaluation Help Menu", evalu));
-      ms=time.getMilliseconds();
+		message.delete();
+      message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Type //help [command] to learn how to use a command! (coming soon)")
+		.setColor("#2200FF")
+		.setTitle(`Help Menu`)
+		.addField("Fun Help Menu", CategoryFun)
+		.addField("Info Help Menu", CategoryInfo));
 
-      do
-      {
-        currentTime=time.getMilliseconds;
-      }while((currentTime)-ms<delay);
-    }  message.delete();
+		message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription("Type //help [command] to learn how to use a command! (coming soon)")
+		.setColor("#2200FF")
+		.setTitle(`Help Menu Part 2`)
+		.addField("Utility Help Menu", CategoryUtility)
+		.addField("Moderation Help Menu", CategoryModeration)
+		.addField("Evaluation Help Menu", CategoryEvaluations)
+		.addField("Data Help Menu", CategoryData));
+
 	  }
 	  
 	//Fun Commands
 	if (urgs[0]=="fun") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(fun).setColor("#2200FF").setTitle(`Fun Help Menu`));
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription(CategoryFun)
+		.setColor("#2200FF")
+		.setTitle(`Fun Help Menu`));
     }
 	
 	//Information Commands
 	if (urgs[0]=="information") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(info).setColor("#2200FF").setTitle(`Information Help Menu`));
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription(CategoryInfo)
+		.setColor("#2200FF")
+		.setTitle(`Information Help Menu`));
     }
 	
 	//Info Commands
 	if (urgs[0]=="info") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(info)
+		.setDescription(CategoryInfo)
 		.setColor("#2200FF")
 		.setTitle(`Info Help Menu`));
     }
@@ -268,7 +294,7 @@ function exec(message, args){
 	if (urgs[0]=="utility") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(utility)
+		.setDescription(CategoryUtility)
 		.setColor("#2200FF")
 		.setTitle(`Utility Help Menu`));
     }
@@ -277,7 +303,7 @@ function exec(message, args){
 	if (urgs[0]=="util") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(utility)
+		.setDescription(CategoryUtility)
 		.setColor("#2200FF")
 		.setTitle(`Util Help Menu`));
     }
@@ -286,7 +312,7 @@ function exec(message, args){
 	if (urgs[0]=="moderation") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(moderation)
+		.setDescription(CategoryModeration)
 		.setColor("#2200FF")
 		.setTitle(`Moderation Help Menu`));
     }
@@ -295,7 +321,7 @@ function exec(message, args){
 	if (urgs[0]=="mod") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(moderation)
+		.setDescription(CategoryModeration)
 		.setColor("#2200FF")
 		.setTitle(`Mod Help Menu`));
     }
@@ -304,7 +330,7 @@ function exec(message, args){
 	if (urgs[0]=="evaluation") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(evalu)
+		.setDescription(CategoryEvaluations)
 		.setColor("#2200FF")
 		.setTitle(`Evaluation Help Menu`));
     }
@@ -313,9 +339,18 @@ function exec(message, args){
 	if (urgs[0]=="evalu") {
 	message.delete();
     return message.channel.sendEmbed(new Discord.RichEmbed()
-		.setDescription(evalu)
+		.setDescription(CategoryEvaluations)
 		.setColor("#2200FF")
 		.setTitle(`Eval Help Menu`));
+    }
+	
+	//Evalu Commands
+	if (urgs[0]=="data") {
+	message.delete();
+    return message.channel.sendEmbed(new Discord.RichEmbed()
+		.setDescription(CategoryData)
+		.setColor("#2200FF")
+		.setTitle(`Data Help Menu`));
     }
 	
 	//Cat Command
@@ -536,13 +571,6 @@ function exec(message, args){
 }
 
 module.exports = new Command('help', exec, {
-    aliases: ['help'],
-    args: [
-        {
-          id: 'amount',
-          type: 'integer',
-          default: 1
-        }
-    ],
+    aliases: ['help, halp, commands, cmds'],
     category: 'info'
 });

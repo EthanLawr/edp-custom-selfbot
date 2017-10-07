@@ -581,7 +581,7 @@ let prefix = `//`;
 	
 	//All Generations (3)
 	if(args[0]=="3all"){
-		AllPokemon, COUNT=1;, COUNT=3;
+		AllPokemon, COUNT=3;
 		const choices = new Set;
 		while(choices.size < COUNT )
 		choices.add(AllPokemon[~~(AllPokemon.length*Math.random())]);

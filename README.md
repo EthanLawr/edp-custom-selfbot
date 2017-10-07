@@ -15,6 +15,8 @@ This bot uses [Discord.js](https://discord.js.org/) and [Akairo](https://1comput
 5. Update in the future by using `git pull`.
 
 ## Configuration
-Just change the `config.json` file in `src/data/config.json`
+To install dependencies type the following (after using cd to the file path): `npm --only=prod install`
+Edit the `config.json` file in `src/data/...`
+Rename all `.example` files to not have `.example` in them (within the `src/data/...` files)
 
 Yea, sorry I will not spoonfeed you much. This is just for smart people who probably already have had selfbots but could do with a better one.

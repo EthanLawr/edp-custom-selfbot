@@ -54,7 +54,7 @@ async function exec(message) {
 	.setTitle("**Ping Metrics**");
     embed.setDescription("This is the Developer Ping command to see specific pings!");
     embed.addField("Connecting to Discord: ", `${wsPing*2}ms`);
-    embed.addField("message.channel.sending a msg: ", `${sendMetrics*2}ms`);
+    embed.addField("Sending a msg: ", `${sendMetrics*2}ms`);
     embed.addField("Editing a msg: ", `${editMetrics*2}ms`);
     embed.addField("Reacting to a msg (rate limit): ", `${reactMetrics*2}ms`);
     embed.addField("Clearing message reactions: ", `${typeof creactMetrics!='string'?creactMetrics*2:creactMetrics}ms`);

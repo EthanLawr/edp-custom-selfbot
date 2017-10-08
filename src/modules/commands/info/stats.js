@@ -1,45 +1,21 @@
 const { Command } = require('discord-akairo');
+const Discord = require ('discord.js');
 
 function exec(message){
 
     const color = this.client.color(message);
-    const embed = this.client.util.embed().setColor(color);
 	const game = message.author.presence.game || {};
 
-    const fields = [
-        [
-            'Memory Usage',
-            `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
-            true
-        ],
-        [
-            'Client Uptime',
-            this.formatMs(this.client.uptime),
-            true
-        ],
-        [
-            'CPU Usage',
-            `${process.hrtime()[0]/8000} %`,
-            true
-        ],
-	[
-            'Game',
-            `${game.name || 'None'}`,
-            true
-        ],
-	[
-            'Commands',
-            `54`,
-            true
-        ]
-	[
-            'Operating System',
-            `${process.platform} ${process.arch}`,
-            true
-        ]
-    ];
-
-    for (const field of fields) embed.addField(...field);
+	let embed = new Discord.RichEmbed()
+	.setColor("#000001")
+	.setTitle("**Custom Selfbot Stats**");
+    embed.setDescription("These are the stats of your custom selfbot!");
+    embed.addField("Memory Usage:", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`);
+    embed.addField("Client Uptime", this.formatMs(this.client.uptime));
+    embed.addField("CPU Usage", `${process.hrtime()[0]/8000} %`);
+    embed.addField("Game", `${game.name || 'None'}`);
+    embed.addField("Commands", `54`);
+    embed.addField("Operating System", `${process.platform} ${process.arch}`);
     return message.edit('', { embed });
 }
 
@@ -67,3 +43,4 @@ module.exports.formatMs = ms => {
 
     return `${days !== '00' ? `${days}:` : ''}${hours}:${minutes}:${seconds}`;
 };
+

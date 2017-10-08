@@ -29,7 +29,7 @@ function exec(message){
         ],
 	[
             'Commands',
-            `53`,
+            `54`,
             true
         ]
 	[

@@ -270,7 +270,7 @@ function exec(message, args){
     //Incase nothing is presented for the help menu	
 	if (!urgs[0]) {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Type //help [command] to learn how to use a command! (coming soon)")
 		.setColor("#2200FF")
 		.setTitle(`Help Menu`)
@@ -280,120 +280,133 @@ function exec(message, args){
 		.addField("Want all of the info help commands?", "Type `//help information` or `//help info`")
 		.addField("Want all of the moderation help commands?", "Type `//help moderation` or `//help mod`")
 		.addField("Want all of the evaluation help commands?", "Type `//help evaluation` or `//help evalu`")
-		.addField("Want all of the data help commands?", "Type `//help data`"));	
+		.addField("Want all of the data help commands?", "Type `//help data`");
+    return message.channel.send({ embed });		
     }
 	
 	//Categories
 	
 	//All Categories
     if (urgs[0]=="all") {
-		message.delete();
-      message.channel.sendEmbed(new Discord.RichEmbed()
+	message.delete();
+    let embed = new Discord.RichEmbed()
 		.setDescription("Type //help [command] to learn how to use a command! (coming soon)")
 		.setColor("#2200FF")
 		.setTitle(`Help Menu`)
 		.addField("Fun Help Menu", CategoryFun)
-		.addField("Info Help Menu", CategoryInfo));
-
-		message.channel.sendEmbed(new Discord.RichEmbed()
+		.addField("Info Help Menu", CategoryInfo);
+	message.channel.send({ embed });
+	embed = new Discord.RichEmbed()
 		.setDescription("Type //help [command] to learn how to use a command! (coming soon)")
 		.setColor("#2200FF")
-		.setTitle(`Help Menu Part 2`)
+	    .setTitle(`Help Menu Part 2`)
 		.addField("Utility Help Menu", CategoryUtility)
 		.addField("Moderation Help Menu", CategoryModeration)
 		.addField("Evaluation Help Menu", CategoryEvaluations)
-		.addField("Data Help Menu", CategoryData));
+		.addField("Data Help Menu", CategoryData);
+
+	return message.channel.send({ embed });	 
 
 	  }
 	  
 	//Fun Commands
 	if (urgs[0]=="fun") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription(CategoryFun)
 		.setColor("#2200FF")
-		.setTitle(`Fun Help Menu`));
+		.setTitle(`Fun Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Information Commands
 	if (urgs[0]=="information") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription(CategoryInfo)
 		.setColor("#2200FF")
-		.setTitle(`Information Help Menu`));
+		.setTitle(`Information Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Info Commands
 	if (urgs[0]=="info") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription(CategoryInfo)
 		.setColor("#2200FF")
-		.setTitle(`Info Help Menu`));
+		.setTitle(`Info Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Utility Commands
 	if (urgs[0]=="utility") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription(CategoryUtility)
 		.setColor("#2200FF")
-		.setTitle(`Utility Help Menu`));
+		.setTitle(`Utility Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Util Commands
 	if (urgs[0]=="util") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription(CategoryUtility)
 		.setColor("#2200FF")
-		.setTitle(`Util Help Menu`));
+		.setTitle(`Util Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Moderation Commands
 	if (urgs[0]=="moderation") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription(CategoryModeration)
 		.setColor("#2200FF")
-		.setTitle(`Moderation Help Menu`));
+		.setTitle(`Moderation Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Mod Commands
 	if (urgs[0]=="mod") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription(CategoryModeration)
 		.setColor("#2200FF")
-		.setTitle(`Mod Help Menu`));
+		.setTitle(`Mod Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Evaluation Commands
 	if (urgs[0]=="evaluation") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription(CategoryEvaluations)
 		.setColor("#2200FF")
-		.setTitle(`Evaluation Help Menu`));
+		.setTitle(`Evaluation Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Evalu Commands
 	if (urgs[0]=="evalu") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription(CategoryEvaluations)
 		.setColor("#2200FF")
-		.setTitle(`Eval Help Menu`));
+		.setTitle(`Eval Help Menu`);
+	return message.channel.send({ embed });
     }
 	
 	//Data Commands
 	if (urgs[0]=="data") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription(CategoryData)
 		.setColor("#2200FF")
-		.setTitle(`Data Help Menu`));
+		.setTitle(`Data Help Menu`);
+	return message.channel.send({ embed });
     }
 
 	
@@ -404,306 +417,332 @@ function exec(message, args){
 	//Cat Command
 	if (urgs[0]=="cat") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Cat", CatDesc)
 		.addField("Aliases:", "Cat\n"+"Kitty")
-		.addField("Usage:", CatUsage));
+		.addField("Usage:", CatUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Cat Command Alias: Kitty
 	if (urgs[0]=="kitty") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Kitty", KittyDesc)
 		.addField("Aliases:", "Kitty\n"+"Cat")
-		.addField("Usage:", KittyUsage));
+		.addField("Usage:", KittyUsage);
+	return message.channel.send({ embed });
     }
 	
 	//CatBomb Command
 	if (urgs[0]=="catbomb") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("CatBomb", CatBombDesc)
 		.addField("Aliases:", "CatBomb\n"+"KittyBomb")
-		.addField("Usage:", CatBombUsage));
+		.addField("Usage:", CatBombUsage);
+	return message.channel.send({ embed });
     }
 	
 	//CatBomb Command Alias: KittyBomb
 	if (urgs[0]=="kittybomb") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("KittyBomb", KittyBombDesc)
 		.addField("Aliases:", "KittyBomb\n"+"CatBomb")
-		.addField("Usage:", KittyBombUsage));
+		.addField("Usage:", KittyBombUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Color Command
 	if (urgs[0]=="color") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Color", ColorDesc)
 		.addField("Aliases:", "Color\n"+"Colour")
-		.addField("Usage:", ColorUsage));
+		.addField("Usage:", ColorUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Color Command Alias: Colour
 	if (urgs[0]=="colour") {
 	message.delete();		
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Colour", ColourDesc)
 		.addField("Aliases:", "Colour\n"+"Color")
-		.addField("Usage:", ColourUsage));
+		.addField("Usage:", ColourUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Dog Command
 	if (urgs[0]=="dog") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Dog", DogDesc)
 		.addField("Aliases:", "Dog\n"+"Doge\n"+"Puppy")
-		.addField("Usage:", DogUsage));
+		.addField("Usage:", DogUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Dog Command Alias: Doge
 	if (urgs[0]=="doge") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Doge", DogeDesc)
 		.addField("Aliases:", "Doge\n"+"Puppy\n"+"Dog")
-		.addField("Usage:", DogeUsage));
+		.addField("Usage:", DogeUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Dog Command Alias: Puppy
 	if (urgs[0]=="puppy") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Puppy", PuppyDesc)
 		.addField("Aliases:", "Puppy\n"+"Dog\n"+"Doge")
-		.addField("Usage:", PuppyUsage));
+		.addField("Usage:", PuppyUsage);
+	return message.channel.send({ embed });
     }
 	
 	//DogBomb Command
 	if (urgs[0]=="dogbomb") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("DogBomb", DogBombDesc)
 		.addField("Aliases:", "DogBomb\n"+"DogeBomb\n"+"PuppyBomb")
-		.addField("Usage:", DogBombUsage));
+		.addField("Usage:", DogBombUsage);
+	return message.channel.send({ embed });
     }
 	
 	//DogBomb Command Alias: DogeBomb
 	if (urgs[0]=="dogebomb") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("DogeBomb", DogeBombDesc)
 		.addField("Aliases:", "DogeBomb\n"+"PuppyBomb\n"+"DogBomb")
-		.addField("Usage:", DogeBombUsage));
+		.addField("Usage:", DogeBombUsage);
+	return message.channel.send({ embed });
     }
 	
 	//DogBomb Command Alias: PuppyBomb
 	if (urgs[0]=="puppybomb") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("PuppyBomb", PuppyBombDesc)
 		.addField("Aliases:", "PuppyBomb\n"+"DogBomb\n"+"DogeBomb")
-		.addField("Usage:", PuppyBombUsage));
+		.addField("Usage:", PuppyBombUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Embed Command
 	if (urgs[0]=="embed") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Embed", EmbedDesc)
 		.addField("Aliases:", "Embed\n"+"Emd\n"+"Embd")
-		.addField("Usage:", EmbedUsage));
+		.addField("Usage:", EmbedUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Embed Command Alias: Emb
 	if (urgs[0]=="emb") {
 	message.delete();	
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Emb", EmbedDesc)
 		.addField("Aliases:", "Embd\n"+"Embed\n"+"Emb")
-		.addField("Usage:", EmbUsage));
+		.addField("Usage:", EmbUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Embed Command Alias: Embd
 	if (urgs[0]=="embd") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Embd", EmbedDesc)
 		.addField("Aliases:", "Emb\n"+"Embd\n"+"Embed")
-		.addField("Usage:", EmbdUsage));
+		.addField("Usage:", EmbdUsage);
+	return message.channel.send({ embed });
     }
 	
 	//Flip Command
 	if (urgs[0]=="flip") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Flip", FlipDesc)
 		.addField("Aliases:", "Flip")
-		.addField("Usage:", FlipUsage));
+		.addField("Usage:", FlipUsage);
+	return message.channel.send({ embed });
     }
 	
 	//GreenText Command
 	if (urgs[0]=="greentext") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("GreenText", GreenTextDesc)
 		.addField("Aliases:", "GreenText\n" + "Green")
-		.addField("Usage:", GreenTextUsage));
+		.addField("Usage:", GreenTextUsage);
+	return message.channel.send({ embed });		
     }	
 	
 	//GreenText Command Alias: Green
 	if (urgs[0]=="green") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Green", GreenTextDesc)
 		.addField("Aliases:", "Green\n" + "GreenText")
-		.addField("Usage:", GreenUsage));	
+		.addField("Usage:", GreenUsage);	
+	return message.channel.send({ embed });
     }
 	
 	//Lmgtfy Command
 	if (urgs[0]=="lmgtfy") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Lmgtfy", LmgtfyDesc)
 		.addField("Aliases:", "Lmgtfy\n" + "Lmg")
-		.addField("Usage:", LmgtfyUsage));
+		.addField("Usage:", LmgtfyUsage);
+	return message.channel.send({ embed });
     }	
 	
 	//Lmgtfy Command Alias: Lmg
 	if (urgs[0]=="lmg") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Lmg", LmgtfyDesc)
 		.addField("Aliases:", "Lmg\n" + "Lmgtfy")
-		.addField("Usage:", LmgUsage));
+		.addField("Usage:", LmgUsage);
+	return message.channel.send({ embed });
     }	
 	
 	//MemeDog Command
 	if (urgs[0]=="memedog") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("MemeDog", MemeDogDesc)
 		.addField("Aliases:", "MemeDog\n"+"MemeDoggo\n"+"MDog")
-		.addField("Usage:", MemeDogUsage));
+		.addField("Usage:", MemeDogUsage);
+	return message.channel.send({ embed });
     }
 	
 	//MemeDog Command Alias: MemeDoggo
 	if (urgs[0]=="memedoggo") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("MemeDoggo", MemeDoggoDesc)
 		.addField("Aliases:", "MemeDoggo\n"+"MDog\n"+"MemeDog")
-		.addField("Usage:", MemeDoggoUsage));
+		.addField("Usage:", MemeDoggoUsage);
+	return message.channel.send({ embed });
     }
 	
 	//MemeDog Command Alias: MDog
 	if (urgs[0]=="mdog") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("MDog", MDogDesc)
 		.addField("Aliases:", "MDog\n"+"MemeDog\n"+"MemeDoggo")
-		.addField("Usage:", MDogUsage));
+		.addField("Usage:", MDogUsage);
+	return message.channel.send({ embed });
     }
 	
 	//OrangeText Command
 	if (urgs[0]=="orangetext") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("OrangeText", OrangeTextDesc)
 		.addField("Aliases:", "OrangeText\n" + "Orange")
-		.addField("Usage:", OrangeTextUsage));
+		.addField("Usage:", OrangeTextUsage);
+	return message.channel.send({ embed });
     }	
 	
 	//OrangeText Command Alias: Orange
 	if (urgs[0]=="orange") {
 	message.delete();
-    return message.channel.sendEmbed(new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 		.setDescription("Beta Thing")
 		.setColor("#2200FF")
 		.setTitle(`Singular Command Help Menu`)
 		.addField("Orange", OrangeTextDesc)
 		.addField("Aliases:", "Orange\n" + "OrangeText")
-		.addField("Usage:", OrangeUsage));	
+		.addField("Usage:", OrangeUsage);	
+	return message.channel.send({ embed });
     }
 	
 }
 
 module.exports = new Command('help', exec, {
-    aliases: ['help, halp, commands, cmds'],
+    aliases: ['help'],
     category: 'info'
 });
+

@@ -1,38 +1,28 @@
 const { Command } = require('discord-akairo');
-const Discord = require ('discord.js');
-
 const got = require('got');
-getDog = (callback) => {
-  got('https://random.dog/woof.json').then(res => {
-    try {
-      callback(undefined, JSON.parse(res.body).url);
-    } catch (err) {
-      callback(err);
-    }
-  }).catch(callback);
+const snekfetch = require('snekfetch');
+
+const getDog = () => {
+  return new Promise( (resolve,rej)=>{
+    got('https://random.dog/woof.json').then(res => {
+      try{
+        const f = JSON.parse(res.body).file;
+        (f!=null)?resolve(f):rej('File not found');
+      }catch(err){
+        rej(err);
+      }
+    }).catch(rej);
+  });
 };
 
-function exec(message, args) {
-    getDog((a,b)=>message.channel.sendEmbed(new Discord.RichEmbed()
-	.setColor('#2200FF')
-	.setImage(b)));
-	
-	getDog((a,b)=>message.channel.sendEmbed(new Discord.RichEmbed()
-	.setColor('#2200FF')
-	.setImage(b)));
-	
-	getDog((a,b)=>message.channel.sendEmbed(new Discord.RichEmbed()
-	.setColor('#2200FF')
-	.setImage(b)));
-	
-	getDog((a,b)=>message.channel.sendEmbed(new Discord.RichEmbed()
-	.setColor('#2200FF')
-	.setImage(b)));
-	
-	return getDog((a,b)=>message.channel.sendEmbed(new Discord.RichEmbed()
-	.setColor('#2200FF')
-	.setImage(b)));
-}
+async function exec(message, channel) {
+	message.delete();
+	await message.channel.send('',{files: [{attachment: (await snekfetch.get(await getDog())).body}]});
+	await message.channel.send('',{files: [{attachment: (await snekfetch.get(await getDog())).body}]});
+	await message.channel.send('',{files: [{attachment: (await snekfetch.get(await getDog())).body}]});
+	await message.channel.send('',{files: [{attachment: (await snekfetch.get(await getDog())).body}]});
+	await message.channel.send('',{files: [{attachment: (await snekfetch.get(await getDog())).body}]});
+};
 
 module.exports = new Command('dogbomb', exec, {
     aliases: ['dogbomb', 'dogebomb', 'puppybomb'],

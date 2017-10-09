@@ -22,11 +22,7 @@ Having issues? Want to contact us? Feel free to join my [server](https://discord
 
 ![Members online](https://discordapp.com/api/guilds/307623291479130132/embed.png).
 
-Also feel free to contact me at the following servers:
-[Nsfw](https://discord.gg/ZZ4U47x/).
-
-![Members online](https://discordapp.com/api/guilds/359801125882298378/embed.png).
-
+Also feel free to contact me at the following server:
 [Sinbadx](https://discord.gg/7jCYpSm/).
 
 ![Members online](https://discordapp.com/api/guilds/257889450850254848/embed.png).

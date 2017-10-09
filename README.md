@@ -18,11 +18,7 @@ This bot uses [Discord.js](https://discord.js.org/) and [Akairo](https://1comput
 Just change the `config.json` file in `src/data/config.json`
 
 ### Support
-Having issues? Want to contact us? Feel free to join my [server](https://discord.gg/jj5FzF7/).  
+Having issues? Want to contact me? Feel free to join my [server](https://discord.gg/jj5FzF7/).  
 
 ![Members online](https://discordapp.com/api/guilds/307623291479130132/embed.png).
 
-Also feel free to contact me at the following server:
-[Sinbadx](https://discord.gg/7jCYpSm/).
-
-![Members online](https://discordapp.com/api/guilds/257889450850254848/embed.png).

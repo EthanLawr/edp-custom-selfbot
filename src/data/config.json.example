@@ -1,10 +1,10 @@
 {
-    "token": "MzI4NjSwERTwTjO3KEN5HDE4.R3EGPy.-O-oPIaVKiiwg82G_5XyhMwGILg", //Insert token here
-    "prefix": "//",             //Insert the desired prefix here
-    "color": "auto",            //Insert the desired color here
-    "noLogs": false,            //Insert whether or not you want to log here
-    "grammar": false,           //Insert whether or not you want grammar correction here
-    "cache": 100,               //Insert the amount of messages you want to cache here
+    "token": "MzI4NjSwERTwTjO3KEN5HDE4.R3EGPy.-O-oPIaVKiiwg82G_5XyhMwGILg",
+    "prefix": "//",
+    "color": "auto",
+    "noLogs": false,
+    "grammar": false,
+    "cache": 100,
     "exitOnDisconnect": false,
     "stickerImages": false,
     "downloadImages": false

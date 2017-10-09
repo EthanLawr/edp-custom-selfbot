@@ -15,6 +15,7 @@ if (message.mentions.users.size < 1) {
 
 module.exports = new Command('ban', exec, {
     aliases: ['ban'],
+    channelRestriction: 'guild',
     category: 'mods'
 });
 

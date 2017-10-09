@@ -15,6 +15,7 @@ if (message.mentions.users.size < 1) {
 
 module.exports = new Command('kick', exec, {
     aliases: ['kick'],
+    channelRestriction: 'guild',
     category: 'mods'
 });
 

@@ -17,4 +17,14 @@ This bot uses [Discord.js](https://discord.js.org/) and [Akairo](https://1comput
 ## Configuration
 Just change the `config.json` file in `src/data/config.json`
 
-Yea, sorry I will not spoonfeed you much. This is just for smart people who probably already have had selfbots but could do with a better one.
+### Support
+Having issues? Want to contact us? Feel free to join my [server](https://discord.gg/jj5FzF7/).  
+
+![Members online](https://discordapp.com/api/guilds/307623291479130132/embed.png)
+
+Also feel free to contact me at the following servers:
+[Nsfw](https://discord.gg/ZZ4U47x/)
+![Members online](https://discordapp.com/api/guilds/359801125882298378/embed.png)
+
+[Sinbadx](https://discord.gg/7jCYpSm/)
+![Members online](https://discordapp.com/api/guilds/257889450850254848/embed.png)

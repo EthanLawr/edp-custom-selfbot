@@ -9,7 +9,11 @@ if (message.mentions.users.size < 1) {
     let output = message.mentions.users.map(m => `**${m}** :gun:`).join('\n');
 
     message.delete();
-    message.channel.sendEmbed(new Discord.RichEmbed().addField(`${message.author.username} is on a killing spree!`, output).setColor("#0000001"));
+	const embed = new Discord.RichEmbed()
+		.setColor("#0000001")
+		.addField(`${message.author.username} is on a killing spree!`, output);
+    return message.channel.send({ embed });		
+
 };
 
 module.exports = new Command('shoot', exec, {

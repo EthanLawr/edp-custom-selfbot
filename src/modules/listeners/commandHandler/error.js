@@ -2,7 +2,7 @@ const { Listener } = require('discord-akairo');
 const Logger = require('../../../util/Logger');
 
 function exec(err) {
-    Logger.warn('An error occured. Contact someone who might know what it means.');
+    Logger.warn('An error occured. Contact someone who might know what it means. For example, contact Evildeathpro#4442');
     Logger.error(err);
 }
 

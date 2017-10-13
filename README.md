@@ -22,8 +22,8 @@ Having issues? Want to contact me? Feel free to join my [server](https://discord
 
 ![Members online](https://discordapp.com/api/guilds/307623291479130132/embed.png).
 
-This selfbot is based on Megumin Selfbot, found [here](https://github.com/1Computer1/megumin-selfbot).
+This selfbot is based on `Megumin Selfbot`, found [here](https://github.com/1Computer1/megumin-selfbot).
 
 The following framework is used: [Discord-Akairo](https://github.com/1Computer1/discord-akairo).
 
-A huge thanks to [1Computer1](https://github.com/1Computer1) for guiding me with his coding..
+A huge thanks to [1Computer1](https://github.com/1Computer1) for guiding me with his coding.

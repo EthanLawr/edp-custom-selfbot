@@ -20,8 +20,6 @@ Just change the `config.json` file in `src/data/config.json`
 ### Support
 Having issues? Want to contact me? My username is Evildeathpro#4442 on `Discord`
 
-![Members online](https://discordapp.com/api/guilds/307623291479130132/embed.png).
-
 This selfbot is based on `Megumin Selfbot`, found [here](https://github.com/1Computer1/megumin-selfbot).
 
 The following framework is used: [Discord-Akairo](https://github.com/1Computer1/discord-akairo).

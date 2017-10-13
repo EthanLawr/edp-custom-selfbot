@@ -18,7 +18,7 @@ This bot uses [Discord.js](https://discord.js.org/) and [Akairo](https://1comput
 Just change the `config.json` file in `src/data/config.json`
 
 ### Support
-Having issues? Want to contact me? Feel free to join my [server](https://discord.gg/jj5FzF7/).  
+Having issues? Want to contact me? My username is Evildeathpro#4442 on `Discord`
 
 ![Members online](https://discordapp.com/api/guilds/307623291479130132/embed.png).
 

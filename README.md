@@ -1,5 +1,9 @@
 ###### Edp Custom Selfbot
 
+## Requirements
+This selfbot requires [Node.js 8.0.0](https://nodejs.org/en/) or higher.  
+This selfbot uses the [Discord.js](https://discord.js.org/) library.
+
 ## Setup
 #### Run the following commands in your console to install dependencies:
 `cd <Insert file location here>`

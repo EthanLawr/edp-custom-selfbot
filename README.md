@@ -7,10 +7,12 @@ This selfbot uses the [Discord.js](https://discord.js.org/) library.
 ## Setup
 #### Run the following commands in your console to install dependencies:
 `cd <Insert file location here>`
+
 `npm --only=prod install`
 
 #### In the config.json file: 
 Add your `Discord Token`
+
 Edit the `Prefix` to your desire
 
 #### Run the following command to start the selfbot:

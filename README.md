@@ -1,4 +1,4 @@
-########### Edp Custom Selfbot
+###### Edp Custom Selfbot
 
 ## Setup
 #### Run the following commands in your console to install dependencies:

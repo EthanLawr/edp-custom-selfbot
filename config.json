@@ -1,9 +1,9 @@
 {
   "discord": {
     "token": "mfa.This.is.gMtUHOrfv.NOT.nlL0iqomPl.A.hP4Ajn.REAL.RHIhJ5y6.TOKEN.hRW1BlonyYULvYCdW-BcA-pKtijEyN2LxUUGg",
-    "prefix": "//"
-  },
-  "strings": {
-    "github": "https://github.com/Evildeathpro/edp-custom-selfbot"
-  }
+		"prefix": "//"
+	},
+	"strings": {
+		"github": "https://github.com/Evildeathpro/edp-custom-selfbot"
+	}
 }

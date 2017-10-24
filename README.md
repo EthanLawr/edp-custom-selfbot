@@ -1,4 +1,4 @@
-###### Edp Custom Selfbot
+## Edp Custom Selfbot
 
 ## Requirements
 This selfbot requires [Node.js 8.0.0](https://nodejs.org/en/) or higher.  

@@ -87,6 +87,15 @@ class Logger {
 	static start(...args) {
         this._log(5, ...args);
     }
+	
+	/**
+	 * Sends level 6 log ([Cmd])
+	 * @param {...any} args - Things to log.
+     * @returns {void}
+     */ 
+	static cmd(...args) {
+        this._log(6, ...args);
+    }
 }
 
 module.exports = Logger;

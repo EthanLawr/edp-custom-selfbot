@@ -122,7 +122,8 @@ module.exports = {
         'Debug',
         'Warn',
         'Error',
-		'Start'
+		'Start',
+		'Cmd'
     ],
     LogColors: [
         'grey',
@@ -130,6 +131,7 @@ module.exports = {
         'yellow',
         'red',
         'white',
-		'green'
+		'green',
+		'white'
     ]
 };

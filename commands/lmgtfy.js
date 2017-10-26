@@ -11,9 +11,9 @@ module.exports = {
 	execute: (bot, msg, args) => {
 		Logger.cmd("Lmgtfy");
     if (!args[0]) {
-        return message.edit('You must provide something to search for!')
+        return msg.edit('You must provide something to search for!')
     } else {
-    message.edit(`Heres how you google this! http://www.lmgtfy.com/?q=${args.join('+')}`);
+    msg.edit(`Heres how you google this! http://www.lmgtfy.com/?q=${args.join('+')}`);
     }
 	}
 };

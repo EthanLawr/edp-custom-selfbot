@@ -1,5 +1,5 @@
-const { Client } = require('discord.js');
-const bot = new Client();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
 const fs = require('fs');
 
@@ -14,11 +14,11 @@ fs.readdir('./commands/', (error, files) => {
 	if(error) {
 		throw new Error(error);
 	}
-	bot.commands = [];
+	client.commands = [];
 
 	files.map((file) => {
 
-	bot.commands[file.replace(/\..*/, '')] = require('./commands/' + file);
+	client.commands[file.replace(/\..*/, '')] = require('./commands/' + file);
 
 	if (files.indexOf(file) === files.length - 1) {
 
@@ -33,11 +33,11 @@ fs.readdir('./commands/', (error, files) => {
 	files.map((file) => {
 		let eventRunner = require('./events/' + file);
 		let eventName = file.split('.')[0];
-		bot.on(eventName, (...args) => eventRunner(bot, ...args));
+		client.on(eventName, (...args) => eventRunner(client, ...args));
 		if (files.indexOf(file) === files.length - 1) {
 			Logger.start('Loaded ' + files.length + ' events! (' + (Date.now() - start) + ' ms)');
-			bot.login(config.discord.token);
-			bot.config = config;
+			client.login(config.discord.token);
+			client.config = config;
 		}
 	});});
 
@@ -50,7 +50,7 @@ fs.readdir('./commands/', (error, files) => {
 	files.map((file) => {
 		let functionRunner = require('./functions/' + file);
 		let functionName = file.split('.')[0];
-		bot.on(functionName, (...args) => functionRunner(bot, ...args));
+		client.on(functionName, (...args) => functionRunner(client, ...args));
 		if (files.indexOf(file) === files.length - 1) {
 			Logger.start('Loaded ' + files.length + ' functions! (' + (Date.now() - start) + ' ms)');
 		}

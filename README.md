@@ -15,6 +15,8 @@ Add your `Discord Token`
 
 Edit the `Prefix` to your desire
 
+Edit the `defaultColor` to your desire. [Please use hex code!](https://www.mathsisfun.com/hexadecimal-decimal-colors.html)
+
 #### Run the following command to start the selfbot:
 `node edp.selfbot`
 

@@ -11,38 +11,49 @@ let start = Date.now();
 
 fs.readdir('./commands/', (error, files) => {
 
-  if(error) {
-    throw new Error(error);
-  }
-  bot.commands = [];
+	if(error) {
+		throw new Error(error);
+	}
+	bot.commands = [];
 
-  files.map((file) => {
+	files.map((file) => {
 
-    bot.commands[file.replace(/\..*/, '')] = require('./commands/' + file);
+	bot.commands[file.replace(/\..*/, '')] = require('./commands/' + file);
 
-    if (files.indexOf(file) === files.length - 1) {
+	if (files.indexOf(file) === files.length - 1) {
 
-      Logger.start('Loaded ' + files.length + ' commands! (' + (Date.now() - start) + ' ms)');
+	Logger.start('Loaded ' + files.length + ' commands! (' + (Date.now() - start) + ' ms)');
 
-      fs.readdir('./events/', (error, files) => {
+	fs.readdir('./events/', (error, files) => {
 
-        if(error) {
-          throw new Error(error);
-        }
+		if(error) {
+			throw new Error(error);
+		}
 
-        files.map((file) => {
-          let eventRunner = require('./events/' + file);
-          let eventName = file.split('.')[0];
+	files.map((file) => {
+		let eventRunner = require('./events/' + file);
+		let eventName = file.split('.')[0];
+		bot.on(eventName, (...args) => eventRunner(bot, ...args));
+		if (files.indexOf(file) === files.length - 1) {
+			Logger.start('Loaded ' + files.length + ' events! (' + (Date.now() - start) + ' ms)');
+			bot.login(config.discord.token);
+			bot.config = config;
+		}
+	});});
 
-          bot.on(eventName, (...args) => eventRunner(bot, ...args));
-          if (files.indexOf(file) === files.length - 1) {
+	fs.readdir('./functions/', (error, files) => {
 
-            Logger.start('Loaded ' + files.length + ' events! (' + (Date.now() - start) + ' ms)');
-            bot.login(config.discord.token);
-            bot.config = config;
-          }
-        });
-      });
-    }
-  });
+		if(error) {
+			throw new Error(error);
+		}
+
+	files.map((file) => {
+		let functionRunner = require('./functions/' + file);
+		let functionName = file.split('.')[0];
+		bot.on(functionName, (...args) => functionRunner(bot, ...args));
+		if (files.indexOf(file) === files.length - 1) {
+			Logger.start('Loaded ' + files.length + ' functions! (' + (Date.now() - start) + ' ms)');
+		}
+	});});}});
 });
+	

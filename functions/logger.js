@@ -44,11 +44,11 @@ class Logger {
     }
 
     /**
-     * Sends level 1 log ([Info]).
+     * Sends level 1 log ([Content]).
      * @param {...any} args - Things to log.
      * @returns {void}
      */
-    static info(...args) {
+    static contents(...args) {
         this._log(1, ...args);
     }
 

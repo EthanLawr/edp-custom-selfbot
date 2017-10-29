@@ -118,7 +118,7 @@ module.exports = {
     },
     LogLevels: [
         'Log',
-        'Info',
+        'Content',
         'Debug',
         'Warn',
         'Error',
@@ -127,7 +127,7 @@ module.exports = {
     ],
     LogColors: [
         'grey',
-        'magenta',
+        'grey',
         'yellow',
         'red',
         'white',

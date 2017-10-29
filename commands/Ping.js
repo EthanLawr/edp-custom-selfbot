@@ -1,4 +1,3 @@
-const Logger = require('../functions/logger');
 module.exports = {
 	commands: [
 		'ping',
@@ -10,10 +9,11 @@ module.exports = {
 	usage: 'ping',
 	description: 'Shows your current ping!',
 	category: 'Information',
-	execute: (bot, msg) => {
-		Logger.cmd("Ping");
-		msg.channel.send("Savage").then(m => m.edit('Ping: `' + `${m.createdTimestamp - msg.createdTimestamp}`+ 'ms`'));
-		msg.delete();
+	execute: (client, message) => {
+		message.channel.send('Pong').then(msg => {
+		msg.edit('Ping: `' + `${msg.createdTimestamp - message.createdTimestamp}` + 'ms`');
+		});
+		message.delete();
 	}
 };
 

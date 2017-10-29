@@ -10,13 +10,13 @@ module.exports = {
 	usage: 'why',
 	description: 'Why would you do that....',
 	category: 'Fun',
-	execute: (bot, msg) => {
+	execute: (client, message) => {
 		snekfetch.get('https://nekos.life/api/why').then((res) => {
 		if (res.status !== 200) {
-			return msg.channel.send('**An error has occurred!**');
+			return message.channel.send('**An error has occurred!**');
 		}
 
-		msg.edit(`${res.body.why}`);
+		message.edit(`${res.body.why}`);
 		});
     }
 };

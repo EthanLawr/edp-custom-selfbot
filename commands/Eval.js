@@ -1,11 +1,17 @@
 const Logger = require('../functions/logger');
-const evalthingy = text => {
-	if (typeof(text) === "string")
-		return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-	else
+const config = require('../config');
+const util = require('util');
+const evalthingy = (text) => {
+	if (typeof text !== 'string')
+		text = util.inspect(text, {depth: 0})
+		text = text
+			.replace(/`/g, "`" + String.fromCharCode(8203))
+			.replace(/@/g, "@" + String.fromCharCode(8203))
+			.replace(config.discord.token, "--DISCORD TOKEN--");
 		return text;
-}
+};
 
+  
 module.exports = {
 	commands: [
 		'eval'
@@ -13,17 +19,16 @@ module.exports = {
 	usage: 'eval <code>',
 	description: 'Evaluate javascript code.',
 	category: 'Utility',
-	execute: async (bot, msg, args) => {
+	execute: async (client, message, args) => {	
 		try {
 			const Input = await args.join(" ");
-			let evaluation = eval(Input);
-
+			let evaluation = evalthingy(await eval(Input));
 			if (typeof evaluation !== "string")
-				evaluation = await require("util").inspect(evaluation);
+				evaluation = await util.inspect(evaluation);
 
-				msg.edit("Input\n```js\n"+Input+"\n```\n"+"Output\n```js\n"+evalthingy(evaluation)+"\n```", await {Input:"xl"});
+				message.edit("Input\n```js\n"+Input+"\n```\n"+"Output\n```js\n"+evalthingy(evaluation)+"\n```", await {Input:"xl"});
 		} catch (err) {
-			msg.edit('Error:\n```js\n'+`${evalthingy(err)}`+'\n```');
+			message.edit('Error:\n```js\n'+`${evalthingy(err)}`+'\n```');
 			return Logger.warn(err)
 		}
 	}

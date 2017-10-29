@@ -8,12 +8,12 @@ module.exports = {
 	usage: 'lmgtfy <content>',
 	description: 'Learning to use google',
 	category: 'Fun',
-	execute: (bot, msg, args) => {
+	execute: (client, message, args) => {
 		Logger.cmd("Lmgtfy");
 		if (!args[0]) {
-			return msg.edit('You must provide something to search for!');
+			return message.edit('You must provide something to search for!');
 		} else {
-			msg.edit(`Heres how you google this! http://www.lmgtfy.com/?q=${args.join('+')}`);
+			message.edit(`Heres how you google this! http://www.lmgtfy.com/?q=${args.join('+')}`);
 		}
 	}
 };

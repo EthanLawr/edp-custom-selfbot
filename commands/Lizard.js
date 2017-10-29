@@ -10,20 +10,20 @@ module.exports = {
 	usage: 'lizard',
 	description: 'Lizards!! :lizard:',
 	category: 'Fun',
-	execute: (bot, msg) => {
+	execute: (client, message) => {
 		snekfetch.get('https://nekos.life/api/lizard').then((res) => {
 		if (res.status !== 200) {
-			return msg.channel.send('An error has occurred!');
+			return message.channel.send('An error has occurred!');
 		}
 
-		msg.edit('', {
+		message.edit('', {
 			embed: new RichEmbed()
 				.setColor(config.discord.defaultColor)
 				.setTitle('Random Lizards')
 				.setDescription('This message will be deleted in 3 minutes')
 				.setImage(res.body.url)
-				.setFooter(`${bot.config.strings.github}`)
-		}).then(msg.delete(180000));
+				.setFooter(`${client.config.strings.github}`)
+		}).then(message.delete(180000));
 		});
 	}
 };

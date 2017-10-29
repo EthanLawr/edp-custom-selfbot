@@ -21,9 +21,9 @@ module.exports = {
 	usage: 'sigh',
 	description: '*Sighs*',
 	category: 'Fun',
-	execute: (bot, msg) => {
+	execute: (client, message) => {
 		Logger.cmd("Sigh");
-		msg.edit(sigh);
+		message.edit(sigh);
 	}
 };
 

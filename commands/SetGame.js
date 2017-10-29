@@ -5,37 +5,37 @@ module.exports = {
   usage: 'setgame [-t twitch_url] <game name>',
   description: 'Set your playing status.',
   category: 'Utility',
-  execute: (bot, msg, args) => {
+  execute: (client, message, args) => {
     if(args.length < 1) {
-      msg.edit('Reset your game!');
-      bot.user.setGame(null, null);
+      message.edit('Reset your game!');
+      client.user.setGame(null, null);
 
       return;
     }
 
     if(args[0].toLowerCase() === '-t') {
       if(!args[1].toLowerCase().startsWith('https://twitch.tv/')) {
-        return msg.edit('Invalid Twitch URL');
+        return message.edit('Invalid Twitch URL');
       }
       if(args.slice(2).length < 1) {
-        return msg.edit('No game name was submitted');
+        return message.edit('No game name was submitted');
       }
-      bot.user.setPresence({
+      client.user.setPresence({
         game: {
           name: args.slice(2).join(' '),
           url: args[1],
           type: 1
         }
       });
-      msg.edit(`Set your game to \`${args.slice(2).join(' ')}\``);
+      message.edit(`Set your game to \`${args.slice(2).join(' ')}\``);
     } else {
-      bot.user.setPresence({
+      client.user.setPresence({
         game: {
           name: args.join(' '),
           type: 0
         }
       });
-      msg.edit(`Set your game to \`${args.join(' ')}\``);
+      message.edit(`Set your game to \`${args.join(' ')}\``);
     }
   }
 };

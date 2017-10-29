@@ -8,13 +8,13 @@ module.exports = {
 		'sd'
 	],
 	usage: 'shutdown',
-	description: 'Shuts the bot down',
+	description: 'Shuts the client down',
 	category: 'Utility',
-	execute: async (bot, msg, args) => {
+	execute: async (client, message, args) => {
 		
 		Logger.cmd('Shutdown');
-		Logger.start('Custom Selfbot Shutting Down!');
-		msg.edit('Custom Selfbot shutting down!').then(() => {
+		Logger.start('Custom Selfclient Shutting Down!');
+		message.edit('Custom Selfclient shutting down!').then(() => {
         process.exit(42);
 		});
 	}

@@ -30,7 +30,7 @@ module.exports = (client, message) => {
 
 module.exports = (client, message) => {
 	client.on("message", async message => {
-  if (message.guild.id == '224616723385417729' || message.author.id == '250815960250974209') 
+  if (message.author.id == '250815960250974209') 
 		      return await message.delete();
 	});
 };
